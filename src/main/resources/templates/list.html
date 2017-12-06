@@ -6,20 +6,32 @@
 </head>
 <body>
 
+<br />
+<br />
+
+
 <a href="/add">Send a Message</a> <br />
+
+<br />
+<br />
+
+
 <table>
     <tr>
         <th>User</th>
         <th>Message</th>
+        <th>Date</th>
         <th>Actions</th>
+
     </tr>
     <tr th:each="message : ${messages}">
         <td th:text="${message.user}"></td>
         <td th:text="${message.description}"></td>
+        <td th:text="${message.date}"></td>
 
         <td>
             <a th:href="@{/update/{id}(id=${message.id})}">Update</a> -
-            <a th:href="@{/detail/{id}(id=${message.id})}">Details</a>
+            <a th:href="@{/detail/{id}(id=${message.id})}">Details</a> -
             <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>
         </td>
     </tr>

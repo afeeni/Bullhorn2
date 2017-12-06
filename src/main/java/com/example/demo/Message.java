@@ -26,8 +26,11 @@ public class Message {
 
     @NotNull
     @Size(min=10)
-    private String description;
+    private String date;
 
+    @NotNull
+    @Size(min=10)
+    private String description;
 
 
     public long getId() {
@@ -46,6 +49,14 @@ public class Message {
         this.user = user;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -53,7 +64,5 @@ public class Message {
     public void setDescription(String description) {
         this.description = description;
     }
-
-
 }
 

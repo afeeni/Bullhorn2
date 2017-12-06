@@ -6,17 +6,32 @@
 </head>
 <body>
 
+<br />
+<br />
+
 <form action="#"
       th:action="@{/process}"
       th:object="${message}"
       method="post">
+
     <input type="hidden" th:field="*{id}" />
+
     User: <input type="text" th:field="*{user}" />
     <span th:id="${#fields.hasErrors('user')}"
           th:errors="*{user}"></span> <br />
+
+    <br />
+
     Message: <textarea rows="3" th:field="*{description}" />
     <span th:id="${#fields.hasErrors('description')}"
           th:errors="*{description}"></span> <br />
+
+    <br />
+    
+    Date: <input type="text" th:field="*{date}" />
+    <span th:id="${#fields.hasErrors('date')}"
+          th:errors="*{date}"></span> <br />
+
 
     <br />
     <input type="submit"  value="Send" />
